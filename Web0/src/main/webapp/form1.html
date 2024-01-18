@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<link rel="stylesheet" href = "WEB-INF/css/style.css"/>
+
+<script type="text/javascript">
+
+	function validation()
+	{
+		if (document.sform.txtFirstName.value=="")
+		{
+			alert("Please enter your First Name !!!")
+			return false
+		}
+		
+		if (document.sform.txtLastName.value=="")
+		{
+			alert("Please enter your Last Name !!!")
+			return false
+		}
+		
+		if((document.sform.gender[0].checked==false) && (document.sform.gender[1].checked==false))
+		{
+			alert("Plzz select your gender")
+			return false
+		}
+		
+		if (document.sform.age.selectedIndex==0)
+		{
+			alert("Plz select your age group !!!")
+			return false
+		}
+		
+		if (document.sform.terms.checked==false)
+		{
+			alert("Plz agree the T&Cs")
+			return false
+		}	
+	}
+	
+	function myFn()
+	{
+		if(validation()==false)
+			return false;
+		window.location.href = "Login.html";
+	}
+	
+
+</script>
+
+
+
+
+
+
+
+
+
+<title>Insert title here</title>
+</head>
+<body>
+
+<h1>Student Admission Form</h1>
+
+<form action = "welcome.html" name="sform" onsubmit="return validation()">
+<table border=1>
+<tr>
+<td>Enter First Name</td>
+<td> <input type="text" name="txtFirstName">
+</td>
+</tr>
+
+<tr>
+<td>Enter Last Name</td>
+<td> <input type="text" name="txtLastName">
+</td>
+</tr>
+
+<tr>
+<td>Select Gender
+<td>Male <input type="radio" name="gender">
+Female <input type="radio" name="gender">
+
+
+<tr>
+<td>Select age group
+<td>
+
+<select name="age">
+<option value="select" selected="selected">Select
+<option value="21-25">21-25
+<option value ="26-30">26-30
+</select>
+
+<tr>
+<td>
+<input type="checkbox" name="terms">
+<td>Agree terms and conditions
+
+<tr>
+<td><input type="button" value="Login" onclick=" myFn()" >
+<td><input type="submit" value="SUBMITT">
+</table>
+</form>
+</body>
+</html>
